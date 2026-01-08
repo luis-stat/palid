@@ -18,23 +18,21 @@ def verify_structure():
         'requirements.txt'
     ]
     
-    print("🔍 Verificando estrutura do projeto...")
-    
     all_ok = True
     for filepath in required_files:
         if os.path.exists(filepath):
-            print(f"  ✅ {filepath}")
+            print(f"{filepath}")
         else:
-            print(f"  ❌ {filepath} (FALTANDO)")
+            print(f"{filepath} (FALTANDO)")
             all_ok = False
     
     if all_ok:
-        print("\n🎉 Estrutura completa! Você pode rodar:")
+        print("\nEstrutura completa")
         print("   1. streamlit run main.py")
         print("   2. pytest tests/ (para testes)")
     else:
-        print("\n⚠️  Alguns arquivos estão faltando.")
-        print("   Execute o script de implantação primeiro.")
+        print("\nAlguns arquivos estão faltando.")
+        print("Execute o script de implantação primeiro.")
     
     return all_ok
 
