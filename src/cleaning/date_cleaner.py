@@ -4,7 +4,7 @@ from typing import Any, Dict, Tuple
 from .base_cleaner import BaseCleaner
 
 class DateCleaner(BaseCleaner):
-    """Cleaner especializado em dados de data/hora com trava de segurança."""
+    """Cleaner especializado em dados de data/hora com trava de segurança"""
     
     def __init__(self, date_format: str = '%d/%m/%Y'):
         self.date_format = date_format
