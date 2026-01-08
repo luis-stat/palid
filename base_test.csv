@@ -1,0 +1,33 @@
+sku,produto,categoria,data_entrada,custo_unitario,vendido,filial,peso_kg,fragil
+PROD-001,Smartphone Galaxy,Eletronicos,2023-01-15,1500.00,True,São Paulo,0.5,S
+PROD-002,iphone 14 pro,eletronicos,15/01/2023,"R$ 6.200,50",S,sp,0.2,Sim
+A100,Geladeira Frost Free,Eletrodomesticos,2022.12.25,3200,1,RIO DE JANEIRO,60.5,N
+B-200,fogao 4 bocas,eletro,10-10-2022,800.90,sim,rj,25,0
+XY-99,Microondas,,01/01/2024,450.00,N,Belo Horizonte,12.0,nao
+TEST-01,cabo hdmi,acessorios,2023/06/15,25.50,True,bh,0.1,FALSE
+123456,SMART TV 50,ELETRONICOS,15-06-2023,"2.500,00",0,curitiba,15,sim
+789012,notebook dell,informatica,2023-09-09,3800,1,PR,2.5,TRUE
+OFF-50,Cadeira Gamer,moveis,05.05.2023,1200.99,S,Porto Alegre,18,0
+K-19,Mesa de Escritorio,MOVEIS,1999-01-01,450.5,n,rs,22,N
+L-20,,Decoracao,12/12/2023,50.00,Sim,Recife,1.5,1
+M-30,Vaso de Planta,jardinagem,2023-11-20,35.90,0,pe,2.0,nao
+GF-001,Furadeira eletrica,Ferramentas,10/10/2021,250.00,1,Salvador,3.5,0
+GF-002,kit chaves,ferramentas,15-02-2022,89.90,Sim,ba,1.2,n
+X-000,Lampada LED,eletrica,2024-01-01,15.00,True,Manaus,0.05,S
+X-001,extensao eletrica,ELETRICA,02/02/2024,"R$ 45,00",False,am,0.3,N
+Z-999,Pneu Aro 14,automotivo,2023-07-07,350.00,1,Brasilia,8,0
+W-888,oleo de motor,AUTOMOTIVO,07-07-2023,45.50,sim,df,1.0,n
+Q-123,Shampoo Automotivo,,08.08.2023,15.90,S,Goiania,0.5,0
+J-500,raquete de tenis,Esportes,2023/12/31,250,0,GO,0.3,f
+U-700,BOLA DE FUTEBOL,esportes,10-01-2024,80.00,1,Fortaleza,0.45,nao
+O-001,Tenis de Corrida,calcados,20/02/2023,350.50,True,ce,0.8,0
+P-002,Sandalia,,15-03-2023,45.00,S,Natal,0.4,0
+L-99,livro python,livros,2020-01-01,89.90,1,rn,0.6,f
+L-100,Kindle,eletronicos,2021/05/15,350.00,sim,Florianopolis,0.2,sim
+C-01,cafeteira expressa,eletroportateis,09-09-2022,"R$ 450,00",N,sc,2.5,V
+B-02,batedeira planetaria,ELETROPORTATEIS,10.10.2022,380.00,0,Vitoria,4.0,1
+A-03,aspirador de po,eletro,11/11/2022,250.50,S,es,3.5,0
+T-10,Tablet Samsung,Informatica,2023-04-01,1200,1,Cuiaba,0.4,S
+M-11,monitor 24,INFORMATICA,01-04-2023,800.00,0,mt,3.5,sim
+H-55,HD Externo,acessorios,2022.06.06,250.00,Sim,Belem,0.2,v
+P-66,pendrive 64gb,ACESSORIOS,06/06/202
