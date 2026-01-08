@@ -3,7 +3,7 @@ from typing import Any, Dict, Tuple
 from .base_cleaner import BaseCleaner
 
 class BooleanCleaner(BaseCleaner):
-    """Cleaner especializado em dados booleanos."""
+    """Cleaner especializado em dados booleanos"""
     
     def __init__(self):
         self.true_values = ['true', 'verdadeiro', 'sim', 's', 'yes', 'y', '1', 1, True, 'v']
