@@ -1,0 +1,26 @@
+id,nome,email,cpf,data_nascimento,cidade,estado,salario,ativo
+C001,João Silva,joao@email.com,123.456.789-00,15/07/1990,São Paulo,SP,5000.5,True
+C002,MARIA SANTOS,maria@email,98765432100,1990-07-16,sao paulo,sp,"R$ 3.500,00",S
+C003,carlos oliveira,carlos@email.com,111.222.333-44,16/07/1990,SAO PAULO,SP,4200,False
+C004,Ana  Costa ,,000.000.000-00,17-07-1990,Rio de Janeiro,RJ,alto,N
+C005,Pedro,pedro@email.com,555.666.777-88,1990/07/18,rio,rj,3800.75,1
+C006,Fernanda Lima,fernanda@email.com,222.333.444-55,1985-12-25,Belo Horizonte,MG,6200.00,True
+C007,roberto almeida,roberto@email.com,33344455566,01/01/1980,curitiba,pr,"R$ 2.800,00",1
+C008,JULIANA,juliana@,444.555.666-77,1995/05/20,recife,PE,3100.5,S
+C009,Lucas   Pereira,lucas@site.com.br,55566677788,10-10-1992,Porto alegre,rs,4500,Sim
+C010,Patricia Gomes,,666.777.888-99,1988-08-08,Salvador,BA,a combinar,N
+C011,RICARDO SOUZA,ricardo@email.com,77788899900,12.12.1985,fortaleza,CE,12000.00,True
+C012,Camila  martins,camila@email.com,888.999.000-11,05/05/1993,manaus,am,"3500,50",0
+C013,Gustavo,gustavo@email.com,99900011122,1999-01-01,bsb,df,7800,False
+C014,amanda nunes,amanda@email.com,,14/02/1996,goiania,GO,4100,Yes
+C015,Bruno Costa,bruno@email.com,111.222.333-44,1987-11-15,Vitoria,ES,5600.00,1
+C016,CLAUDIA,,22233344455,1991/09/09,Belem,pa,2500,s
+C017,diego  ferreira,diego@email.com,333.444.555-66,20/10/1989,florianopolis,SC,"R$ 8.500,00",True
+C018,eliane,eliane@email.com,44455566677,1982-03-30,Natal,rn,3900.0,nao
+C019,Felipe Santos,felipe@email,555.666.777-88,04-04-1994,Joao Pessoa,PB,4200,1
+C020,GABRIELA,,66677788899,1998/12/12,aracaju,se,estagiario,S
+C021,hugo  Mendes,hugo@email.com,777.888.999-00,15/06/1986,maceio,AL,"15000",True
+C022,isabela  rocha,isabela@email.com,88899900011,1993-07-07,Teresina,PI,5100.55,No
+C023,JORGE,jorge@email.com,999.000.111-22,1979/02/28,Sao luis,ma,6300,0
+C024,karina silva,,00011122233,11-11-1991,campo grande,MS,3800,Verdadeiro
+C025,LEONARDO,leo@email.com,111.222.333-44,1984-04-14,CUIABA,mt,"R$ 4.200,90",F

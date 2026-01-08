@@ -1,0 +1,6 @@
+sku,nome,categoria,preco,estoque,data_cadastro
+SKU001,Notebook Dell,Eletrônicos,3500.0,10,2024-01-15
+SKU002,IPHONE 14,Celular,"R$ 4.999,99",5,15/01/2024
+SKU003,tv samsung,Eletrônicos,2500,0,2024-01-16
+sku004,Geladeira,Eletrodomésticos,"2.800,50",8,16-01-2024
+SKU005,Mouse Gamer,Acessório,199.9,25,17/01/2024
