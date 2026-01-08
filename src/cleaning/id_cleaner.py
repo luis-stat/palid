@@ -72,4 +72,4 @@ class IDCleaner(BaseCleaner):
             if len(clean) < 25 and (any(c.isdigit() for c in clean) or clean.isupper()):
                 code_count += 1
                 
-        return code_count / len(sample) > 0.7
+        return code_count / len(sample) > 0.7 
