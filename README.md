@@ -5,7 +5,7 @@
 ![Pattern](https://img.shields.io/badge/Design%20Pattern-Strategy-purple)
 ![Status](https://img.shields.io/badge/Status-Funcional-green)
 
-> **Projeto Acadêmico** desenvolvido para automatizar o processo de ETL (Extração, Transformação e Carga), focando especificamente na limpeza inteligente de datasets "sujos" comuns.
+> **Projeto acadêmico** desenvolvido para automatizar o processo de ETL (Extração, Transformação e Carga), focando especificamente na limpeza de datasets "sujos" comuns.
 
 ---
 
