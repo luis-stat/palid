@@ -87,7 +87,7 @@ O sistema opera em três camadas de defesa para garantir a integridade dos dados
 
 ## Sugestões de Melhorias Futuras
 
-Este projeto serve como base para pesquisas mais avançadas. Segue melhorias que podem evoluir o projeto, divididas entre engenharia de produto e evolução metodológica científica.
+O projeto está em processo inicial e precisa de melhorias como as ditas a seguir:
 
 ### Aprimoramentos no teor estatístico
 
