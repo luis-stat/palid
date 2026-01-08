@@ -4,7 +4,7 @@ from .base_cleaner import BaseCleaner
 from .hybrid_corrector import HybridCorrector
 
 class CategoricalCleaner(BaseCleaner):
-    """Cleaner especializado em dados categóricos."""
+    """Cleaner especializado em dados categóricos"""
     
     def __init__(self, corrector: Optional[HybridCorrector] = None):
         self.corrector = corrector or HybridCorrector()
