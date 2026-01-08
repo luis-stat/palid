@@ -4,13 +4,13 @@ from typing import Any, Dict, Tuple
 from .base_cleaner import BaseCleaner
 
 class EmailCleaner(BaseCleaner):
-    """Cleaner especializado em endereços de email."""
+    """Cleaner especializado em endereços de email"""
     
     def __init__(self):
         self.email_pattern = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
     
     def clean(self, series: pd.Series, **kwargs) -> Tuple[pd.Series, Dict[str, Any]]:
-        """Limpa e valida endereços de email."""
+        """Limpa e valida endereços de email"""
         stats = {
             'method': 'email_cleaning',
             'rows_corrected': 0,
