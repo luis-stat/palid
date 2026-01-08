@@ -7,8 +7,7 @@ from .base_cleaner import BaseCleaner
 
 class TextCleaner(BaseCleaner):
     """
-    Cleaner genérico para Texto Livre (Nomes, Observações, Cidades, etc).
-    Objetivo: Padronização visual segura.
+    Cleaner genérico para texto livre (nomes, observações, cidades, etc)
     """
     
     def __init__(
