@@ -57,4 +57,4 @@ class CleanerSelector:
         return TextCleaner()
 
     def register_cleaner(self, cleaner: BaseCleaner) -> None:
-        self.cleaners.insert(0, cleaner)
+        self.cleaners.insert(0, cleaner) 
