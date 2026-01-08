@@ -4,7 +4,7 @@ from typing import Any, Dict, Tuple, Optional
 from .base_cleaner import BaseCleaner
 
 class NumericCleaner(BaseCleaner):
-    """Cleaner numérico com trava de segurança anti-destruição."""
+    """Cleaner numérico com trava de segurança anti-destruição"""
     
     def __init__(self):
         pass
@@ -25,7 +25,7 @@ class NumericCleaner(BaseCleaner):
         temp_cleaned = series.apply(self._clean_numeric)
         
         # Verifica quantos viraram número válido (não NaN e não string original inalterada se fosse lixo)
-        # Aqui simplificamos: verificamos quantos são float/int no final
+        # Verifica-se quantos são float/int no final
         temp_numeric = pd.to_numeric(temp_cleaned, errors='coerce')
         count_final = temp_numeric.count()
 
