@@ -188,3 +188,9 @@ treinos_fitness.csv,calorias_queimadas,NUMERICO_INTEIRO
 treinos_fitness.csv,duracao_minutos,NUMERICO_INTEIRO
 treinos_fitness.csv,bpm_medio,NUMERICO_INTEIRO
 treinos_fitness.csv,data_treino,DATA_HORA
+DadosOriginaisTeste.csv,cidade,TEXTO_LIVRE
+DadosOriginaisTeste.csv,estado,TEXTO_LIVRE
+DadosOriginaisTeste.csv,cor,TEXTO_LIVRE
+DadosOriginaisTeste.csv,universidade,TEXTO_LIVRE
+DadosOriginaisTeste.csv,renda,NUMERICO_INTEIRO
+DadosOriginaisTeste.csv,filhos,NUMERICO_INTEIRO
