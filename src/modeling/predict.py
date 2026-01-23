@@ -9,8 +9,9 @@ class ModelPredictor:
         self.model = None
         self.label_encoder = None
         self.feature_columns = []
-        self.extractor = MetaFeatureExtractor()
+        self.extractor = None
         self._load_model()
+        self._load_extractor()
         
     def _load_model(self):
         if not os.path.exists(self.model_path):
@@ -20,12 +21,18 @@ class ModelPredictor:
         self.model = data['model']
         self.label_encoder = data['label_encoder']
         self.feature_columns = data.get('feature_columns', [])
+
+    def _load_extractor(self):
+        base_dir = os.path.dirname(self.model_path)
+        ext_path = os.path.join(base_dir, 'feature_extractor.pkl')
+        
+        if os.path.exists(ext_path):
+            with open(ext_path, 'rb') as f:
+                self.extractor = pickle.load(f)
+        else:
+            self.extractor = MetaFeatureExtractor()
         
     def predict_column_types(self, df: pd.DataFrame) -> dict:
-        """Recebe um DF e retorna {coluna: tipo}."""
-        # Ajusta extrator (opcionalmente poderia usar fit aqui, mas usamos genérico)
-        # self.extractor.fit(df.columns.tolist()) 
-        
         feats_list = []
         cols = []
         for col in df.columns:
@@ -34,7 +41,6 @@ class ModelPredictor:
             cols.append(col)
             
         X = pd.DataFrame(feats_list).fillna(0)
-        # Alinha colunas com o treino
         for c in self.feature_columns:
             if c not in X.columns: X[c] = 0
         X = X[self.feature_columns]

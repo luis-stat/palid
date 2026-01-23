@@ -4,12 +4,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from typing import Dict, Any, List
 import os
 import warnings
+import pickle
 from src.dataset import DataLoader
 
 class MetaFeatureExtractor:
     def __init__(self):
+        self.max_emb_features = 150
         self.tfidf = TfidfVectorizer(
-            max_features=50, lowercase=True, analyzer='char_wb', ngram_range=(2, 4)
+            max_features=self.max_emb_features, 
+            lowercase=True, 
+            analyzer='char_wb', 
+            ngram_range=(2, 4)
         )
         self.is_fitted = False
         
@@ -53,6 +58,26 @@ class MetaFeatureExtractor:
         str_lens = sample.astype(str).str.len()
         features['avg_len'] = str_lens.mean() if not str_lens.empty else 0
         
+        try:
+            numeric_data = pd.to_numeric(series_clean, errors='coerce').dropna()
+            if len(numeric_data) > 0:
+                mean_val = numeric_data.mean()
+                features['log_mean'] = np.log1p(abs(mean_val))
+                std_val = numeric_data.std()
+                features['cv'] = std_val / abs(mean_val) if abs(mean_val) > 0 else 0
+                features['log_min'] = np.log1p(abs(numeric_data.min()))
+                features['log_max'] = np.log1p(abs(numeric_data.max()))
+            else:
+                features['log_mean'] = 0
+                features['cv'] = 0
+                features['log_min'] = 0
+                features['log_max'] = 0
+        except:
+            features['log_mean'] = 0
+            features['cv'] = 0
+            features['log_min'] = 0
+            features['log_max'] = 0
+
         map_dtype = {'object': [1,0,0], 'int64': [0,1,0], 'float64': [0,0,1]}
         feats_d = map_dtype.get(str(series.dtype), [0,0,0])
         features['is_obj'], features['is_int'], features['is_float'] = feats_d
@@ -62,14 +87,13 @@ class MetaFeatureExtractor:
                 emb = self.tfidf.transform([col_name]).toarray()[0]
                 for i, v in enumerate(emb): features[f'nm_emb_{i}'] = v
             except:
-                for i in range(50): features[f'nm_emb_{i}'] = 0
+                for i in range(self.max_emb_features): features[f'nm_emb_{i}'] = 0
         else:
-            for i in range(50): features[f'nm_emb_{i}'] = 0
+            for i in range(self.max_emb_features): features[f'nm_emb_{i}'] = 0
                 
         return features
 
 def build_features_dataset(raw_data_dir: str, gabarito_path: str, output_path: str):
-    """Pipeline para ler CSVs brutos e criar o dataset de treino."""
     extractor = MetaFeatureExtractor()
     loader = DataLoader()
     
@@ -79,7 +103,6 @@ def build_features_dataset(raw_data_dir: str, gabarito_path: str, output_path: s
     
     files = [os.path.join(raw_data_dir, f) for f in os.listdir(raw_data_dir) if f.endswith('.csv')]
     
-    # 1. Fit no TF-IDF
     all_cols = []
     for fpath in files:
         try:
@@ -89,8 +112,13 @@ def build_features_dataset(raw_data_dir: str, gabarito_path: str, output_path: s
             all_cols.extend(df.columns.tolist())
         except: pass
     extractor.fit(all_cols)
+
+    extractor_path = os.path.join('models', 'feature_extractor.pkl')
+    if not os.path.exists('models'):
+        os.makedirs('models')
+    with open(extractor_path, 'wb') as f:
+        pickle.dump(extractor, f)
     
-    # 2. Extração
     dataset = []
     print(f"Processando {len(files)} arquivos...")
     
@@ -114,7 +142,7 @@ def build_features_dataset(raw_data_dir: str, gabarito_path: str, output_path: s
             warnings.warn(f"Erro em {fname}: {e}")
             
     if not dataset:
-        raise ValueError("Nenhum dado foi extraído. Verifique se os nomes dos arquivos em 'data/raw' correspondem ao 'gabarito_master.csv'.")
+        raise ValueError("Nenhum dado foi extraído.")
             
     df_final = pd.DataFrame(dataset)
     df_final.to_csv(output_path, index=False)
